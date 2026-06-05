@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====================== Variables de Color ====================== */
+:root {
+  --background: #050609;
+  --surface: #0B0F17;
+  --accent: #22D3EE;
+  --text-primary: #e5e5e5;
+  --border: rgba(255,255,255,0.08);
+}
+
+/* ====================== Estilos Base ====================== */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', system_ui, sans-serif;
+}
+
+/* ====================== Componentes Personalizados ====================== */
+.glass-card {
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  background-color: rgba(11, 15, 23, 0.6);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+  border-radius: 16px;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #22d3ee, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animaciones */
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.7s cubic-bezier(0.2, 0.8, 0.6, 1);
+}
+
+.motion-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optimizaciones de rendimiento */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Acelera transformaciones GPU */
+.glass-card {
+  background-color: #0B0F17;           /* Color sólido */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.5);
+  /* backdrop-filter: blur(8px); */   /* ← Eliminado (esto es el mayor culpable) */
+  border-radius: 16px;
+}
