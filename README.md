@@ -93,7 +93,7 @@ https://apf-web-nu.vercel.app/
 
 ## 👨‍💻 Autor
 
-**Ale Pérez Fuente**
+**Alejandro Pérez Fuentes**
 
 GitHub: https://github.com/aleperezfuente
 
